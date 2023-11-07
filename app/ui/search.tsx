@@ -6,7 +6,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   
-  function handleSearch(term: string) {
+  function HandleSearch(term: string) {
     const params = new URLSearchParams(searchParams);
     const pathname = usePathname();
     const { replace } = useRouter();
@@ -27,7 +27,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
         className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
         placeholder={placeholder}
         onChange={(e) => {
-          handleSearch(e.target.value);
+          HandleSearch(e.target.value);
         }}
         defaultValue={searchParams.get('query')?.toString()}
       />
